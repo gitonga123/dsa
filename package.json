@@ -1,0 +1,28 @@
+{
+  "name": "dsa",
+  "version": "1.0.0",
+  "description": "Level Up Data structures and algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitonga123/dsa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitonga123/dsa/issues"
+  },
+  "homepage": "https://github.com/gitonga123/dsa#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0"
+  }
+}
