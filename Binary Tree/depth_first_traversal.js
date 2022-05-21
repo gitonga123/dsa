@@ -16,6 +16,15 @@ const depthFirstTraversal = (root) => {
     return nodes_list;
 }
 
+const depthFirstTraversalRecursive = (root) => {
+    if (root === null) return [];
+
+    const left = depthFirstTraversalRecursive(root.left);
+    const right = depthFirstTraversalRecursive(root.right);
+    return [root.value, ...left, ...right];
+}
+
 module.exports = {
-    depthFirstTraversal
+    depthFirstTraversal,
+    depthFirstTraversalRecursive
 }
