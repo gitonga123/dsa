@@ -1,5 +1,6 @@
 const binaryTree = require('./depth_first_traversal');
 const binary = require('./breadth_first_traversal');
+const search = require('./binary_tree_search');
 const Node = require('./node');
 
 describe('Binary Tree', () => {
@@ -283,6 +284,41 @@ describe('Binary Tree', () => {
                 });
             });
         });
-    });
 
+        describe('Test if value exist in tree', () => {
+            test('should return true ', () => {
+                const a = new Node('a');
+                const b = new Node('b');
+                const c = new Node('c');
+                const d = new Node('d');
+                const e = new Node('e');
+                const f = new Node('f');
+
+                a.left = b;
+                a.right = c;
+                b.left = d;
+                b.right = e;
+                c.left = f;
+                expect(search.searchTree(a, 'c')).toBeTruthy();
+            });
+            test('should return false ', () => {
+                const a = new Node('a');
+                const b = new Node('b');
+                const c = new Node('c');
+                const d = new Node('d');
+                const e = new Node('e');
+                const f = new Node('f');
+
+                a.left = b;
+                a.right = c;
+                b.left = d;
+                b.right = e;
+                c.left = f;
+                expect(search.searchTree(a, 'h')).toBeFalsy();
+            });
+            test('should return false ', () => {
+                expect(search.searchTree(null, 'h')).toBeFalsy();
+            });
+        });
+    });
 });
