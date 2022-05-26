@@ -44,3 +44,8 @@ Exist the stack once the stack is empyty
 Time Complexity 0(n)
 
 Space Complexity 0(n)
+
+## Breadth First Traversal
+
+- Travel across before going deeper
+- Queue adt to be used to achieve this
