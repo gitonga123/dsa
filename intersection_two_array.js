@@ -9,7 +9,7 @@ var intersect = function (nums1, nums2) {
     
     for (let i of nums2) {
         if (obj[i]) {
-            obj[i]--
+            obj[i]--;
             result.push(i)
         }
     }
@@ -17,6 +17,6 @@ var intersect = function (nums1, nums2) {
 };
 
 console.log(intersect(
-    [4, 9, 5],
-    [9, 4, 9, 8, 4]
+    [1,2,2,1,2],
+    [2,2, 2]
 ));
