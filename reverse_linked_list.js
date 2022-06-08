@@ -60,7 +60,43 @@ const reverseListRecurse = (curr, prev = null) => {
 
     reverseListRecurse(curr.next, curr);
 }
-print(a);
+
+var swapPairs = function (head) {
+    let dummy = '';
+    dummy.val = null;
+    dummy.next = head;
+    let current = dummy;
+
+    while (current.next !== null && current.next !== undefined && current.next.next !== null) {
+        let first = current.next;
+        // Second node of the pair
+        let second = current.next.next;
+        // Point the next of first node to the node after second node
+        first.next = second.next;
+        // Now the current node's next should be the second node
+        current.next = second;
+        // Linking the original second node to the first node
+        current.next.next = first;
+        // Move the pointer two nodes ahead
+        current = current.next.next;
+    }
+
+    return dummy;
+
+    // let prev = head;
+    // prev.next = head;
+    // let current = prev;
+    // while (current.next !== null && current.next !== undefined && current.next.next !== null) {
+    //     let first = current.next;
+    //     let second = current.next.next;
+    //     first.next = second.next;
+    //     current.next = second;
+    //     current.next.next = first;
+    //     current = current.next.next;
+    // }
+
+    // return prev.next;
+};
 const newHead = reverseList(a);
-console.log("Reverse --->");
+console.log("Swap Pairs --->");
 print(newHead);
