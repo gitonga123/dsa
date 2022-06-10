@@ -1,6 +1,6 @@
 const Node = require('./node');
 
-var dfs = (root) => {
+var preorderTraversalR = (root) => {
     if (root == null) { return; }
     const stack = [root];
     while (stack.length > 0) {
@@ -12,7 +12,17 @@ var dfs = (root) => {
         if (curr.left) {
             stack.push(curr.left);
         }
+
+
     }
+}
+
+var preorderTraversal = (root) => {
+    if (root == null) { return; }
+    const number = [];
+    number.push(root.value);
+    preorderTraversal(root.left); preorderTraversal(root.right);
+    return number;
 }
 
 const a = new Node('a');
@@ -21,18 +31,12 @@ const c = new Node('c');
 const d = new Node('d');
 const e = new Node('e');
 const f = new Node('f');
-const g = new Node('g');
-const h = new Node('h');
-const i = new Node('i');
 
 a.left = b;
 a.right = c;
 b.left = d;
-d.left = e;
-d.right = f;
-c.left = g;
-c.right = h;
-h.right = i;
+b.right = e;
+c.right = f;
 
-dfs(a);
+console.log(preorderTraversal(a));
 
