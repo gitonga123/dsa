@@ -17,6 +17,14 @@ const depthFirstPrint = (graph, source) => {
     }
 }
 
+const depthFirstPrintRecursive = (graph, source) => {
+    console.log(source);
+
+    for (let n of graph[source]) {
+        depthFirstPrintRecursive(graph, n);
+    }
+}
+
 const graph = {
     a: ['b', 'c'],
     b: ['d'],
@@ -27,3 +35,4 @@ const graph = {
 };
 
 depthFirstPrint(graph, 'a');
+depthFirstPrintRecursive(graph, 'a');
