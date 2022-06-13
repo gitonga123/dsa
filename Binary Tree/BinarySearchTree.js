@@ -136,6 +136,30 @@ class BinarySearchTree {
             return node;
         }
     }
+
+    validTree() {
+        const root = this.root;
+        if (!root) {
+            return true; // Sanity check for passing test case '[]'
+        }
+
+        function helper(root, min, max) {
+           // console.log(min, max);
+            if (!root) {
+                return true; // We hit the end of the path
+            }
+            
+            if ((min !== null && root.data <= min) || (max !== null && root.data >= max)) {
+                return false; // current node's val doesn't satisfy the BST rules
+            }
+
+            // Continue to scan left and right
+            console.log(min, max);
+            return helper(root.left, min, root.data) && helper(root.right, root.data, max);
+        }
+
+        return helper(root, null, null);
+    };
 }
 
 const bst = new BinarySearchTree();
@@ -148,4 +172,6 @@ bst.insert(22);
 bst.insert(17);
 bst.insert(1);
 
-console.log(bst.print());
+//console.log(bst.print());
+console.log(bst.validTree(15));
+//console.log(bst.print());
