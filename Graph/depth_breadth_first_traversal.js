@@ -26,8 +26,8 @@ const depthFirstPrintRecursive = (graph, source) => {
 }
 
 const breadthFirstPrint = (graph, source) => {
-    const queue = [ source ];
-    while(queue.length > 0) {
+    const queue = [source];
+    while (queue.length > 0) {
         const curr = queue.shift();
         console.log(curr);
         for (let n of graph[curr]) {
@@ -35,6 +35,21 @@ const breadthFirstPrint = (graph, source) => {
         }
     }
 }
+
+const hasPath = (graph, src, dst) => {
+    const stack = [src];
+    while (stack.length > 0) {
+        const curr = stack.pop();
+        if (curr == dst) {
+            return true;
+        }
+
+        for (let n of graph[curr]) {
+            stack.push(n);
+        }
+    }
+    return false
+};
 
 
 const graph = {
