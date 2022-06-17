@@ -2,7 +2,7 @@ const islandCount = (grid) => {
     const visited = new Set();
     let count = 0;
     for (let r = 0; r < grid.length; r += 1) {
-        for (let c = 0; c < grid[r].length; c += 1) {
+        for (let c = 0; c < grid[0].length; c += 1) {
             if (explore(grid, r, c, visited) == true) {
                 count += 1;
             }
