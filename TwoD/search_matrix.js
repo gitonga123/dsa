@@ -10,10 +10,9 @@
  */
 var searchMatrix = function (matrix, target) {
     let left = 0; right = matrix[0].length - 1;
-    let l = 0; r = matrix[0].length;
     let counter = 0;
     while (left <= right && counter < matrix.length) {
-        if (target >= matrix[counter][left] && target <= matrix[counter][right] ) {
+        if (target >= matrix[counter][left] && target <= matrix[counter][right]) {
             let mid = Math.floor((right + left) / 2);
             if (matrix[counter][mid] == target) {
                 return true;
