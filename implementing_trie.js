@@ -20,6 +20,7 @@ let Trie = function () {
             node.setEnd();
             return;
         } else if (!node.keys.has(input[0])) {
+            console.log(input[0]);
             node.keys.set(input[0], new Node());
             return this.add(input.substr(1), node.keys.get(input[0]));
         } else {
@@ -64,14 +65,14 @@ let Trie = function () {
 
 myTrie = new Trie()
 myTrie.add('ball');
-myTrie.add('bat');
-myTrie.add('doll');
-myTrie.add('dork');
-myTrie.add('do');
-myTrie.add('dorm')
-myTrie.add('send')
-myTrie.add('sense')
-console.log(myTrie.isWord('doll'))
-console.log(myTrie.isWord('dor'))
-console.log(myTrie.isWord('dorf'))
-console.log(myTrie.print())
+// myTrie.add('bat');
+// myTrie.add('doll');
+// myTrie.add('dork');
+// myTrie.add('do');
+// myTrie.add('dorm')
+// myTrie.add('send')
+// myTrie.add('sense')
+// console.log(myTrie.isWord('doll'))
+// console.log(myTrie.isWord('dor'))
+// console.log(myTrie.isWord('dorf'))
+// console.log(myTrie.print())
