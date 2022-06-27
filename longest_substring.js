@@ -16,7 +16,6 @@ var lengthOfLongestSubstring = function (s) {
         // max prevents moving backward, 'start' can only move forward
         if (seen.has(s[i])) {
             start = Math.max(seen.get(s[i]) + 1, start);
-            console.log(seen);
         }
         seen.set(s[i], i);
         // maximum of the current substring length and maxLen
