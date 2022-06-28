@@ -26,3 +26,4 @@ console.log(fibonacci2(6));
 console.log(fibonacci2(7));
 console.log(fibonacci2(8));
 console.log(fibonacci2(50));
+console.log(fibonacci2(100));
