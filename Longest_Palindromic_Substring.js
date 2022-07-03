@@ -9,7 +9,6 @@ var longestPalindrome = function (str) {
     let longest = -Infinity;
 
     for (let i = 0; i < str.length; i++) {
-        console.log("1--->",str, i, i);
         let longestOdd = expandFromCenter(str, i, i);
         let longestEven = expandFromCenter(str, i-1, i);
         longest = Math.max(longest, longestEven, longestOdd);
