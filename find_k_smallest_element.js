@@ -20,38 +20,24 @@ var kthSmallest = function (matrix, k) {
     while (temp_array.length < matrix_length) {
         const item = matrix.shift();
 
-        temp_array = merge(temp_array, temp_array.length, item, item.length);
+        temp_array = [...temp_array, ...item];
     }
+    console.log(temp_array);
 
+    temp_array.sort((a, b) => a - b);
+
+    console.log(temp_array);
     return temp_array[k - 1];
-};
-
-var merge = function (nums1, m, nums2, n) {
-    let i = m + n - 1;
-    m -= 1;
-    n -= 1;
-    while (n >= 0) {
-        if (nums1[m] > nums2[n]) {
-            nums1[i] = nums1[m];
-            m -= 1;
-        } else {
-            nums1[i] = nums1[n];
-            n -= 1
-        }
-        i -= 1;
-    }
-
-    return nums1;
 };
 
 
 let matrix = [[1, 5, 9], [10, 11, 13], [12, 13, 15]], k = 8;
 
-// console.log(kthSmallest(matrix, k));
+console.log(kthSmallest(matrix, k));
 
 // matrix = [[-5]], k = 1;
 
 // console.log(kthSmallest(matrix, k));
-matrix = [[1, 2], [1, 3]], k = 2;
+// matrix = [[1, 2], [1, 3]], k = 2;
 
-console.log(kthSmallest(matrix, k));
+// console.log(kthSmallest(matrix, k));
