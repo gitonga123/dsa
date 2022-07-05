@@ -8,27 +8,23 @@
  * @param {string[]} wordDict
  * @return {boolean}
  */
- var wordBreak = function(s, wordDict) {
-    let start = 0;
-    let left = 0;
-    let right = 0;
-    let wordSet = new Set(wordDict);
-    let found = [];
+var wordBreak = function (s, wordDict) {
+    const table = new Array(s.length + 1).fill(false);
+    table[0] = true;
 
-    for (let index = 0; index < s.length; index++) {
-        let word = s.substring(start, index);
-        console.log(word, start, index);
-        if (wordSet.has(word)) {
-            //console.log(word, start, index);
-            start = index;
-            found.push(true);
-        }
+    for (let i = 0; i < table.length; i++) {
+        if (table[i] === false) continue;
 
+        for (let j = i + 1; j < table.length; j++) {
+            if (wordDict.includes(s.slice(i, j))) [
+                table[j] = true
+            ]
+        };
     }
 
-    return found.length == wordDict.length;
+    return table[table.length - 1];
 };
 
-let s = "catsandog", wordDict = ["cats","dog","sand","and","cat"];
+let s = "leetcode", wordDict = ["leet", "code"];
 
 console.log(wordBreak(s, wordDict));
