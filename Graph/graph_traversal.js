@@ -2,6 +2,7 @@
 // depth, process the height first before traversing on the width;
 
 const depthFirstPrint = (graph, source) => {
+
     const stack = [source];
 
     while (stack.length > 0) {
