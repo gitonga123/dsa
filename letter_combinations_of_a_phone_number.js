@@ -12,6 +12,7 @@ var letterCombinations = function (digits) {
     if (digits === "") return [];
     let results = [];
     let combo = {
+        "1":"1",
         "2": "abc",
         "3": "def",
         "4": "ghi",
@@ -44,5 +45,5 @@ var letterCombinations = function (digits) {
 };
 
 
-let digits = "23";
+let digits = "231";
 console.log(letterCombinations(digits));

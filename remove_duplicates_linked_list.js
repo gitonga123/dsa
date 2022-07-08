@@ -11,7 +11,7 @@ function replaceDuplicateNodes(head) {
     while (next != null) {
         if (current.val == next.val) {
             current.next = next.next;
-            next = next.nex;
+            next = next.next;
         } else {
             current = next;
             next = next.next;

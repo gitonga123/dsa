@@ -144,7 +144,7 @@ class BinarySearchTree {
         }
 
         function helper(root, min, max) {
-           // console.log(min, max);
+           // console.log(min, m1ax);
             if (!root) {
                 return true; // We hit the end of the path
             }

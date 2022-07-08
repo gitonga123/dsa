@@ -36,7 +36,6 @@ const findCheapestPrice = function (n, flights, src, dst, k) {
     while (stack.length) {
         sourceCity = stack.shift();
         [destinations, price, stops] = sourceCity;
-        console.log(destinations);
 
         if (stops > k) continue;
 

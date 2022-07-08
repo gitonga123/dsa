@@ -13,7 +13,6 @@ const generateParenthesis = function (n) {
 
     // recursive function that generates parenthesis when open == 0 and closed == 0 and open <= closed;
     function generate(open, closed, s = '') {
-        console.log(open, closed, open > closed);
         if (open > closed) {
             return;
         }

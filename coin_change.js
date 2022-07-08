@@ -19,7 +19,7 @@ const coinChange = (coins, amount) => {
             if (coin <= i) {
                 let idx = i - coin;
                 let potentialAmount = table[idx] +1;
-                table[i] = Math.min(potentialAmount, table[i])
+                table[i] = Math.min(potentialAmount, table[i]);
             }
         }
     }
