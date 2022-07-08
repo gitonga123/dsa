@@ -12,11 +12,13 @@ var wordBreak = function (s, wordDict) {
     const table = new Array(s.length + 1).fill(false);
     table[0] = true;
 
+    let myDict = new Set(...wordDict);
+
     for (let i = 0; i < table.length; i++) {
         if (table[i] === false) continue;
 
         for (let j = i + 1; j < table.length; j++) {
-            if (wordDict.includes(s.slice(i, j))) [
+            if (myDict.has(s.slice(i, j))) [
                 table[j] = true
             ]
         };
