@@ -12,8 +12,10 @@ var merge = function (nums1, m, nums2, n) {
         }
         i -= 1;
     }
+
+    return nums1;
 };
-console.log(mergeArrays(
+console.log(merge(
     [1, 3, 4, 7],
     [2, 4, 6, 8],
     4,
