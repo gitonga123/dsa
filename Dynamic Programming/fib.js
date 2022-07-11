@@ -22,6 +22,7 @@ const fibonacci2 = (number, memo = {}) => {
 
 }
 
+console.log(fibonacci2(0));
 console.log(fibonacci2(6));
 console.log(fibonacci2(7));
 console.log(fibonacci2(8));
