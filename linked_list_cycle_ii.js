@@ -23,24 +23,27 @@ class ListNode {
  */
 var detectCycle = function (head) {
 
-    let hashMap = {};
-
-    if (head == null || head.next == null) {
-        return -1;
-    }
+    if (head == null || head.next == null) return null;
+    
     let slow = head;
-    let count = 0;
-
-    while (slow != null) {
-        if (hashMap[slow.val+''] === undefined) {
-            hashMap[slow.val] = count;
-            count++
-        } else if (hashMap[slow.val] !== undefined) {
-            return slow;
-        }
+    let fast = head;
+    
+    while (fast != null && fast.next != null) {
         slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) break;
+    };
+    
+    if (fast == null || fast.next == null) return null;
+    
+    slow = head;
+    
+    while (slow != fast) {
+        slow = slow.next;
+        fast = fast.next;
     }
-    return -1;
+    
+    return slow;
 };
 
 const a = new ListNode(3);
