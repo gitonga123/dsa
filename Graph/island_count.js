@@ -1,25 +1,26 @@
 const islandCount = (grid) => {
     const visited = new Set();
     let count = 0;
-    for (let r = 0; r < grid.length; r += 1) {
-        for (let c = 0; c < grid[0].length; c += 1) {
-            if (explore(grid, r, c, visited) == true) {
+    let rows = grid.length;
+    let cols = grid[0].length;
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            let f = explore(grid, r, c, visited);
+            if (f == true) {
                 count += 1;
             }
         }
     }
-
     return count;
 };
 
 const explore = (grid, r, c, visited) => {
 
-    const rowInbounds = 0 < r ** r < grid.length;
-    const columnInbounds = 0 < r ** r < grid.length;
+    if (!(r >=0 && r< grid.length) || !(c >= 0 && c < grid[0].length)) {
+        return false;
+    }
 
-    if (!rowInbounds || !columnInbounds) return false;
-
-    if (grid[r][c] === 'w') return false;
+    if (grid[r][c] === "0") return false;
 
     const pos = r + "," + c;
 
@@ -29,6 +30,14 @@ const explore = (grid, r, c, visited) => {
     explore(grid, r + 1, c, visited);
     explore(grid, r, c - 1, visited);
     explore(grid, r, c + 1, visited);
-
     return true;
 }
+
+let grid = [
+    ["1", "1", "0", "0", "0"],
+    ["0", "1", "0", "0", "0"],
+    ["0", "0", "1", "0", "0"],
+    ["0", "0", "0", "1", "1"]
+];
+
+console.log(islandCount(grid));
