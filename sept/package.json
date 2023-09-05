@@ -1,0 +1,18 @@
+{
+  "name": "dsa-sep-2023",
+  "version": "1.9.3",
+  "description": "DSA RELOADED",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dsa",
+    "javascript",
+    "learning",
+    "2023",
+    "sept"
+  ],
+  "author": "Daniel Mutwiri",
+  "license": "ISC"
+}
