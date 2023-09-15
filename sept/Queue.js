@@ -2,31 +2,40 @@
 
 class Queue {
     constructor() {
-        this.items = [];
+        this.items = {};
+        this.first = 0;
+        this.last = 0;
     }
 
     enqueue(element) {
-        this.items.push(element);
+        this.items[this.last] = element;
+        this.last++;
     }
 
     dequeue() {
-        return this.items.shift();
+
+        let first =  this.items[this.first];
+
+        delete this.items[this.first];
+
+        this.first++;
+        return first;
     }
 
     peek() {
-        return this.items[0];
+        return this.items[this.first];
     }
 
     isEmpty() {
-        return this.items.length == 0;
+        return (this.first - this.first) === 0;
     }
 
     size() {
-        return this.items.length;
+        return (this.first - this.first)
     }
 
     print() {
-        return this.items.toString();
+        return this.items;
     }
 }
 
